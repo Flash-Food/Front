@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">FlashFood</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Logo">Flash Food</string>
+    <string name="usuario">Usuario</string>
+    <string name="senha">Senha</string>
+    <string name="esqueceu_a_senha">Esqueceu a senha ?</string>
+    <string name="Login">Entrar</string>
+    <string name="Cadastrar">Cadastrar</string>
+</resources>
