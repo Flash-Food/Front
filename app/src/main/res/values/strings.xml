@@ -5,7 +5,11 @@
     <string name="Logo">Flash Food</string>
     <string name="usuario">Usuario</string>
     <string name="senha">Senha</string>
-    <string name="esqueceu_a_senha">Esqueceu a senha ?</string>
+    <string name="esqueceu_a_senha">Esqueceu a senha?</string>
     <string name="Login">Entrar</string>
     <string name="Cadastrar">Cadastrar</string>
+    <!--SIGNUP VIEW-->
+    <string name="nome">Nome</string>
+    <string name="cpf">CPF</string>
+    <string name="email">Email</string>
 </resources>
