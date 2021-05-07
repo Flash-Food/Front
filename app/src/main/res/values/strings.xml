@@ -12,4 +12,9 @@
     <string name="nome">Nome</string>
     <string name="cpf">CPF</string>
     <string name="email">Email</string>
+    <string name="redefinir_senha">Redefinir Senha</string>
+    <string name="digite_o_c_digo">Digite o Código</string>
+    <string name="alterar">Alterar</string>
+    <string name="digite_a_nova_senha">Digite a Nova Senha</string>
+    <string name="confirme_a_senha">Confirme a Senha</string>
 </resources>
