@@ -1,9 +1,11 @@
 package br.senac.flashfood.activities
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import br.senac.flashfood.R
 import br.senac.flashfood.databinding.ActivityMainBinding
+import br.senac.flashfood.fragments.FragLogin
 
 class MainActivity : AppCompatActivity() {
 
@@ -13,6 +15,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+
+        supportFragmentManager.beginTransaction().
+                                replace(R.id.containerMain, FragLogin()).commit()
+
+
     }
 
 

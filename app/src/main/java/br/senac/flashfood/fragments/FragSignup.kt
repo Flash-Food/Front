@@ -6,30 +6,27 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import br.senac.flashfood.R
-import br.senac.flashfood.databinding.FragmentFragLoginBinding
+import br.senac.flashfood.databinding.FragmentFragSignupBinding
 import br.senac.flashfood.utils.ui.alterFragment
 
-class FragLogin : Fragment() {
+class FragSignup : Fragment() {
 
-    lateinit var binding: FragmentFragLoginBinding
+    lateinit var binding: FragmentFragSignupBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
-        binding = FragmentFragLoginBinding.inflate(inflater)
+        binding = FragmentFragSignupBinding.inflate(inflater)
 
-        binding.btnSigUp.setOnClickListener {
-            alterView(FragSignup())
+
+        binding.buttonBackSignup.setOnClickListener {
+            alterView(FragLogin())
         }
 
-        binding.txtForgotePassword.setOnClickListener {
-           alterView(FragEsqSenha())
-        }
-
-        binding.btnLogin.setOnClickListener {
-          alterView(FragLogin())
+        binding.buttonSignup.setOnClickListener {
+            alterView(FragLogin())
         }
 
         return binding.root
@@ -37,7 +34,8 @@ class FragLogin : Fragment() {
 
     companion object {
         @JvmStatic
-        fun newInstance() = FragLogin()
+        fun newInstance(param1: String, param2: String) =
+            FragSignup()
     }
 
     fun alterView(fragment: Fragment) {
