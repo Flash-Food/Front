@@ -28,11 +28,11 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/textNameSignup"
+            android:id="@+id/editNameSignup"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="68dp"
+            android:layout_marginTop="32dp"
             android:layout_marginEnd="32dp"
             android:ems="10"
             android:hint="@string/nome"
@@ -43,11 +43,11 @@
             app:layout_constraintTop_toBottomOf="@+id/imageLogoSignup" />
 
         <EditText
-            android:id="@+id/textCPFSignup"
+            android:id="@+id/editCPFSignup"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="36dp"
+            android:layout_marginTop="32dp"
             android:layout_marginEnd="32dp"
             android:ems="10"
             android:hint="@string/cpf"
@@ -55,14 +55,14 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textNameSignup" />
+            app:layout_constraintTop_toBottomOf="@+id/editNameSignup" />
 
         <EditText
-            android:id="@+id/textEmailSignup"
+            android:id="@+id/editEmailSignup"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="36dp"
+            android:layout_marginTop="32dp"
             android:layout_marginEnd="32dp"
             android:ems="10"
             android:hint="@string/email"
@@ -70,14 +70,14 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textCPFSignup" />
+            app:layout_constraintTop_toBottomOf="@+id/editCPFSignup" />
 
         <EditText
-            android:id="@+id/textPasswordSignup"
+            android:id="@+id/editPhoneNumberSignup"
             android:layout_width="0dp"
             android:layout_height="45dp"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="36dp"
+            android:layout_marginTop="32dp"
             android:layout_marginEnd="32dp"
             android:ems="10"
             android:hint="@string/senha"
@@ -85,7 +85,22 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textEmailSignup" />
+            app:layout_constraintTop_toBottomOf="@+id/editEmailSignup" />
+
+        <EditText
+            android:id="@+id/editPasswordSignup"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="47dp"
+            android:layout_marginEnd="32dp"
+            android:ems="10"
+            android:hint="@string/senha"
+            android:inputType="textWebPassword"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editPhoneNumberSignup" />
 
         <Button
             android:id="@+id/buttonSignup"
@@ -98,6 +113,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textPasswordSignup" />
+            app:layout_constraintTop_toBottomOf="@+id/editPasswordSignup" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
