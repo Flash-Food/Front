@@ -25,7 +25,7 @@ class FragLogin : Fragment() {
         }
 
         binding.txtForgotePassword.setOnClickListener {
-           alterView(FragEsqSenha())
+           alterView(FragForgotPassword())
         }
 
         binding.btnLogin.setOnClickListener {

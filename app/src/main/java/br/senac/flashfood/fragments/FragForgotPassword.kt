@@ -6,22 +6,22 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import br.senac.flashfood.R
-import br.senac.flashfood.databinding.FragmentFragEsqSenhaBinding
+import br.senac.flashfood.databinding.FragmentFragForgotPasswordBinding
 import br.senac.flashfood.utils.ui.alterFragment
 
-class FragEsqSenha : Fragment() {
+class FragForgotPassword : Fragment() {
 
-    lateinit var binding : FragmentFragEsqSenhaBinding
+    lateinit var binding : FragmentFragForgotPasswordBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
-        binding = FragmentFragEsqSenhaBinding.inflate(inflater)
+        binding = FragmentFragForgotPasswordBinding.inflate(inflater)
 
         binding.buttonEnviarRedefinir.setOnClickListener {
-            alterView(FragRedSenha())
+            alterView(FragResetPassword())
         }
 
         return binding.root
@@ -29,7 +29,7 @@ class FragEsqSenha : Fragment() {
 
     companion object {
         @JvmStatic
-        fun newInstance(param1: String, param2: String) = FragEsqSenha()
+        fun newInstance(param1: String, param2: String) = FragForgotPassword()
     }
 
     fun alterView(fragment: Fragment) {
