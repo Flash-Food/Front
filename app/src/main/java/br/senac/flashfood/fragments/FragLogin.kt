@@ -20,7 +20,7 @@ class FragLogin : Fragment() {
 
         binding = FragmentFragLoginBinding.inflate(inflater)
 
-        binding.btnSigUp.setOnClickListener {
+        binding.btnSignupLogin.setOnClickListener {
             alterView(FragSignup())
         }
 
@@ -28,7 +28,7 @@ class FragLogin : Fragment() {
            alterView(FragForgotPassword())
         }
 
-        binding.btnLogin.setOnClickListener {
+        binding.btnEnterLogin.setOnClickListener {
           alterView(FragLogin())
         }
 

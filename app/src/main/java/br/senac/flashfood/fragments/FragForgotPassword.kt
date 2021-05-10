@@ -20,7 +20,7 @@ class FragForgotPassword : Fragment() {
 
         binding = FragmentFragForgotPasswordBinding.inflate(inflater)
 
-        binding.buttonEnviarRedefinir.setOnClickListener {
+        binding.buttonSendForgot.setOnClickListener {
             alterView(FragResetPassword())
         }
 
