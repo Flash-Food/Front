@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/frag_cardapio"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="Inicio"
+        android:iconTint="#42910a"
+        android:visible="true" />
+    <item
+        android:id="@+id/frag_buscar"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_search_24"
+        android:title="Buscar"
+        android:iconTint="@color/white"
+        android:visible="true" />
+    <item
+        android:id="@+id/frag_perfil"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_person_24"
+        android:title="Perfil"
+        android:iconTint="#42910a"
+        android:visible="true" />
+</menu>
