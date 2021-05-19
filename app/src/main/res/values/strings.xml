@@ -18,4 +18,15 @@
     <string name="type_new_password">Digite a Nova Senha</string>
     <string name="reenter_password">Confirme a Senha</string>
     <string name="send">Enviar</string>
+    <string name="order_success">Seu pedido foi finalizado com sucesso!</string>
+    <string name="back_to_menu">Voltar ao inicio</string>
+    <string name="checkout">Checkout</string>
+    <string name="payment">Pagamento</string>
+    <string name="cash_or_vr">Dinheiro/VR</string>
+    <string name="card">Cartão de Crédito</string>
+    <string name="card_name">Nome impresso no cartão</string>
+    <string name="card_number">Numero do cartão</string>
+    <string name="cvv">CVV</string>
+    <string name="card_date">Data de validade</string>
+    <string name="finish">Finalizar pedido</string>
 </resources>
