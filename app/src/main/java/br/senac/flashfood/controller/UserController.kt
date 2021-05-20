@@ -4,23 +4,18 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import br.senac.flashfood.client.UserService
 import br.senac.flashfood.config.RetrofitConfig
-import br.senac.flashfood.constants.ApiConstants
 import br.senac.flashfood.models.dto.UserLoginRequestDTO
-import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
-import io.reactivex.rxjava3.functions.Consumer
+import br.senac.flashfood.models.dto.UserSignUpRequestDTO
 import io.reactivex.rxjava3.schedulers.Schedulers
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-import java.util.*
 
 class UserController {
 
     private val retrofit = RetrofitConfig.getRetrofit()
 
-    fun login(user: UserLoginRequestDTO, result: MutableLiveData<Boolean>) {
+    private val service = retrofit.create(UserService::class.java)
 
-        val service = retrofit.create(UserService::class.java)
+
+    fun login(user: UserLoginRequestDTO, result: MutableLiveData<Boolean>) {
 
         service.login(user).subscribeOn(Schedulers.io())
             .observeOn(Schedulers.newThread())
@@ -31,6 +26,21 @@ class UserController {
                 },
                 {error ->
                     Log.e("ERROR_LOGIN", error.message.toString())
+                    result.postValue(false)
+                })
+    }
+
+    fun signup(user: UserSignUpRequestDTO, result: MutableLiveData<Boolean>) {
+
+        service.signup(user).subscribeOn(Schedulers.io())
+            .observeOn(Schedulers.newThread())
+            .subscribe(
+                {value ->
+                    if(value.isSuccessful) result.postValue(true)
+                    else result.postValue(false)
+                },
+                { error ->
+                    Log.e("ERROR_SIGNUP", error.message.toString())
                     result.postValue(false)
                 })
     }

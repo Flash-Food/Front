@@ -16,6 +16,7 @@ import br.senac.flashfood.controller.UserController
 import br.senac.flashfood.databinding.FragloginBinding
 import br.senac.flashfood.models.dto.UserLoginRequestDTO
 import br.senac.flashfood.utils.ui.alterFragment
+import br.senac.flashfood.utils.ui.toastShow
 import java.time.Duration
 
 
@@ -52,7 +53,7 @@ class FragLogin : Fragment() {
 
         mLoginResult.observe(this, Observer<Boolean>{
             if(it) startActivity(Intent(activity, BottomNavigationActivity::class.java))
-            else Toast.makeText(activity, "Erro ao realizar login!", Toast.LENGTH_LONG).show()
+            else toastShow(activity, "Erro ao realizar login!", Toast.LENGTH_LONG)
         })
 
         return binding.root
