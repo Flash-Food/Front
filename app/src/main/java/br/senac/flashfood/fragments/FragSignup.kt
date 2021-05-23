@@ -1,6 +1,5 @@
 package br.senac.flashfood.fragments
 
-import android.os.Binder
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -12,7 +11,7 @@ import androidx.lifecycle.Observer
 import br.senac.flashfood.R
 import br.senac.flashfood.controller.UserController
 import br.senac.flashfood.databinding.FragmentFragSignupBinding
-import br.senac.flashfood.models.dto.UserSignUpRequestDTO
+import br.senac.flashfood.models.dto.user.UserSignUpRequestDTO
 import br.senac.flashfood.utils.ui.alterFragment
 import br.senac.flashfood.utils.ui.toastShow
 
@@ -42,7 +41,14 @@ class FragSignup : Fragment() {
             val password = binding.editPasswordSignup.text.toString()
             val cpf = binding.editCPFSignup.text.toString()
             val phoneNumber = binding.editPhoneNumberSignup.text.toString()
-            val userSignUpRequestDTO = UserSignUpRequestDTO(name, email, password, cpf, phoneNumber)
+            val userSignUpRequestDTO =
+                UserSignUpRequestDTO(
+                    name,
+                    email,
+                    password,
+                    cpf,
+                    phoneNumber
+                )
             userController.signup(userSignUpRequestDTO, mSignUpResult)
             binding.buttonSignup.isEnabled = false
         }

@@ -10,7 +10,7 @@ object RetrofitConfig {
 
     private fun config() = Retrofit.Builder()
         .client(HttpClientRetrofitConfig.getHttpClient())
-        .baseUrl(ApiConstants.BASE_URL.value)
+        .baseUrl(ApiConstants.LOCAL_URL.value)
         .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
         .addConverterFactory(GsonConverterFactory.create())
         .build()

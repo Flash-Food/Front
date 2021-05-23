@@ -1,4 +1,4 @@
-package br.senac.flashfood.models.dto
+package br.senac.flashfood.models.dto.user
 
 data class UserSignUpRequestDTO (
     val name: String,

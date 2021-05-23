@@ -4,8 +4,8 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import br.senac.flashfood.client.UserService
 import br.senac.flashfood.config.RetrofitConfig
-import br.senac.flashfood.models.dto.UserLoginRequestDTO
-import br.senac.flashfood.models.dto.UserSignUpRequestDTO
+import br.senac.flashfood.models.dto.user.UserLoginRequestDTO
+import br.senac.flashfood.models.dto.user.UserSignUpRequestDTO
 import io.reactivex.rxjava3.schedulers.Schedulers
 
 class UserController {

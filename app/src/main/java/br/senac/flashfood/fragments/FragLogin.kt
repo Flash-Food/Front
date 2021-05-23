@@ -2,7 +2,6 @@ package br.senac.flashfood.fragments
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,20 +13,18 @@ import br.senac.flashfood.R
 import br.senac.flashfood.activities.BottomNavigationActivity
 import br.senac.flashfood.controller.UserController
 import br.senac.flashfood.databinding.FragloginBinding
-import br.senac.flashfood.models.dto.UserLoginRequestDTO
+import br.senac.flashfood.models.dto.user.UserLoginRequestDTO
 import br.senac.flashfood.utils.ui.alterFragment
 import br.senac.flashfood.utils.ui.toastShow
-import java.time.Duration
 
 
 class FragLogin : Fragment() {
 
-    var mLoginResult = MutableLiveData<Boolean>()
-
+    private var mLoginResult = MutableLiveData<Boolean>()
 
     lateinit var binding: FragloginBinding
 
-    private val userController = UserController()
+    private val USER_CONTROLLER = UserController()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -47,8 +44,11 @@ class FragLogin : Fragment() {
         binding.btnEnterLogin.setOnClickListener {
             val username = binding.editEmailLogin.text.toString()
             val password = binding.editPasswordLogin.text.toString()
-            val user = UserLoginRequestDTO(username, password)
-            userController.login(user, mLoginResult)
+            val user = UserLoginRequestDTO(
+                username,
+                password
+            )
+            USER_CONTROLLER.login(user, mLoginResult)
         }
 
         mLoginResult.observe(this, Observer<Boolean>{

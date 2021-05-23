@@ -2,21 +2,21 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/frag_cardapio"
+        android:id="@+id/frag_menu"
         android:enabled="true"
         android:icon="@drawable/ic_baseline_home_24"
         android:title="Inicio"
         android:iconTint="#42910a"
         android:visible="true" />
     <item
-        android:id="@+id/frag_buscar"
+        android:id="@+id/frag_search"
         android:enabled="true"
         android:icon="@drawable/ic_baseline_search_24"
         android:title="Buscar"
         android:iconTint="@color/white"
         android:visible="true" />
     <item
-        android:id="@+id/frag_perfil"
+        android:id="@+id/frag_profile"
         android:enabled="true"
         android:icon="@drawable/ic_baseline_person_24"
         android:title="Perfil"

@@ -1,7 +1,9 @@
-package br.senac.flashfood.models.dto
+package br.senac.flashfood.models.dto.user
+
+import java.util.*
 
 data class UserSignUpResponseDTO (
-    val id: String,
+    val id: UUID,
     val name: String,
     val email: String,
     val cpf: String,
