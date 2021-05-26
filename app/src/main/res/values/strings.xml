@@ -29,4 +29,7 @@
     <string name="cvv">CVV</string>
     <string name="card_date">Data de validade</string>
     <string name="finish">Finalizar pedido</string>
+    <string name="profile">Meu Perfil</string>
+    <string name="type_email_to_password">Digite o email para recuperar a senha:</string>
+    <string name="search">Buscar</string>
 </resources>

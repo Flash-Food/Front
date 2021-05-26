@@ -11,7 +11,7 @@
     <FrameLayout
         android:layout_width="397dp"
         android:layout_height="651dp"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintBottom_toTopOf="@+id/menuNavigationView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -19,7 +19,7 @@
     </FrameLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavigationView"
+        android:id="@+id/menuNavigationView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:backgroundTint="#333333"
