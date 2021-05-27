@@ -18,20 +18,20 @@ class BottomNavigationActivity : AppCompatActivity() {
         binding = ActivityBottomNavigationBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        alterFragment(this, R.id.containerBottomFrags, FragRestaurant.newInstance())
+        alterFragment(this, R.id.containerBottomFrag, FragRestaurant.newInstance())
 
-        binding.bottomNavigationView.setOnNavigationItemSelectedListener {
+        binding.menuNavigation.setOnNavigationItemSelectedListener {
            when(it.itemId) {
                 R.id.frag_menu -> {
-                    alterFragment(this, R.id.containerBottomFrags, FragRestaurant.newInstance())
+                    alterFragment(this, R.id.containerBottomFrag, FragRestaurant.newInstance())
                     true
                 }
                 R.id.frag_search -> {
-                    alterFragment(this, R.id.containerBottomFrags, FragSearch.newInstance())
+                    alterFragment(this, R.id.containerBottomFrag, FragSearch.newInstance())
                     true
                 }
                 R.id.frag_profile -> {
-                    alterFragment(this, R.id.containerBottomFrags, FragProfile.newInstance())
+                    alterFragment(this, R.id.containerBottomFrag, FragProfile.newInstance())
                     true
                 }
                else -> false

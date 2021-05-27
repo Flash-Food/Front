@@ -110,7 +110,7 @@
             app:layout_constraintTop_toBottomOf="@+id/CPFtextView" />
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/menuNavigationView"
+            android:id="@+id/menuNavigation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:backgroundTint="#333333"
