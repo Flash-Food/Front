@@ -2,11 +2,14 @@ package br.senac.flashfood.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import br.senac.flashfood.fragments.FragSearch
+import br.senac.flashfood.fragments.restaurant.FragSearch
 import br.senac.flashfood.R
+import br.senac.flashfood.context.UserContext
 import br.senac.flashfood.databinding.ActivityBottomNavigationBinding
-import br.senac.flashfood.fragments.FragProfile
-import br.senac.flashfood.fragments.FragRestaurant
+import br.senac.flashfood.fragments.user.FragProfile
+import br.senac.flashfood.fragments.restaurant.FragRestaurant
+import br.senac.flashfood.handlers.ExceptionHandler
+import br.senac.flashfood.utils.internal.SharedUtils
 import br.senac.flashfood.utils.ui.alterFragment
 
 class BottomNavigationActivity : AppCompatActivity() {
@@ -17,6 +20,8 @@ class BottomNavigationActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityBottomNavigationBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        Thread.setDefaultUncaughtExceptionHandler(ExceptionHandler(this))
 
         alterFragment(this, R.id.containerBottomFrag, FragRestaurant.newInstance())
 
@@ -38,4 +43,11 @@ class BottomNavigationActivity : AppCompatActivity() {
            }
         }
     }
+
+    override fun onPause() {
+        super.onPause()
+        if(UserContext.token.isNotBlank())
+            SharedUtils(this).saveToken(UserContext.token)
+    }
+
 }

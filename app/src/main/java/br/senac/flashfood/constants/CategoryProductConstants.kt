@@ -1,6 +1,6 @@
 package br.senac.flashfood.constants
 
-enum class CategoryProduct {
+enum class CategoryProductConstants {
     SALTY,
     CANDY,
     DRINK

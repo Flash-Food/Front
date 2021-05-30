@@ -1,4 +1,4 @@
-package br.senac.flashfood.fragments
+package br.senac.flashfood.fragments.login
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -17,9 +17,9 @@ import br.senac.flashfood.utils.ui.toastShow
 
 class FragSignup : Fragment() {
 
-    var mSignUpResult = MutableLiveData<Boolean>()
+    private var mSignUpResult = MutableLiveData<Boolean>()
 
-    lateinit var binding: FragmentFragSignupBinding
+    private lateinit var binding: FragmentFragSignupBinding
 
     private val userController = UserController()
 
@@ -29,7 +29,6 @@ class FragSignup : Fragment() {
     ): View? {
 
         binding = FragmentFragSignupBinding.inflate(inflater)
-
 
         binding.buttonBackSignup.setOnClickListener {
             alterView(FragLogin())
@@ -42,7 +41,7 @@ class FragSignup : Fragment() {
             val cpf = binding.editCPFSignup.text.toString()
             val phoneNumber = binding.editPhoneNumberSignup.text.toString()
             val userSignUpRequestDTO =
-                UserSignUpRequestDTO(
+                UserSignUpRequestDTO (
                     name,
                     email,
                     password,
@@ -66,8 +65,7 @@ class FragSignup : Fragment() {
 
     companion object {
         @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            FragSignup()
+        fun newInstance() = FragSignup()
     }
 
     fun alterView(fragment: Fragment) {

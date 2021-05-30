@@ -1,4 +1,4 @@
-package br.senac.flashfood.fragments
+package br.senac.flashfood.fragments.login
 
 import android.content.Intent
 import android.os.Bundle
@@ -13,6 +13,7 @@ import br.senac.flashfood.R
 import br.senac.flashfood.activities.BottomNavigationActivity
 import br.senac.flashfood.controller.UserController
 import br.senac.flashfood.databinding.FragloginBinding
+import br.senac.flashfood.fragments.password.FragForgotPassword
 import br.senac.flashfood.models.dto.user.UserLoginRequestDTO
 import br.senac.flashfood.utils.ui.alterFragment
 import br.senac.flashfood.utils.ui.toastShow

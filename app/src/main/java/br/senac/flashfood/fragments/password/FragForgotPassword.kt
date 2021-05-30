@@ -1,4 +1,4 @@
-package br.senac.flashfood.fragments
+package br.senac.flashfood.fragments.password
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,22 +6,22 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import br.senac.flashfood.R
-import br.senac.flashfood.databinding.FragmentFragResetPasswordBinding
+import br.senac.flashfood.databinding.FragmentFragForgotPasswordBinding
 import br.senac.flashfood.utils.ui.alterFragment
 
-class FragResetPassword : Fragment() {
+class FragForgotPassword : Fragment() {
 
-    lateinit var binding: FragmentFragResetPasswordBinding
+    lateinit var binding : FragmentFragForgotPasswordBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
-        binding = FragmentFragResetPasswordBinding.inflate(inflater)
+        binding = FragmentFragForgotPasswordBinding.inflate(inflater)
 
-        binding.buttonAlterarRedefinir.setOnClickListener {
-            alterView(FragLogin())
+        binding.buttonSendForgot.setOnClickListener {
+            alterView(FragResetPassword())
         }
 
         return binding.root
@@ -29,7 +29,8 @@ class FragResetPassword : Fragment() {
 
     companion object {
         @JvmStatic
-        fun newInstance() = FragResetPassword()
+        fun newInstance(param1: String, param2: String) =
+            FragForgotPassword()
     }
 
     fun alterView(fragment: Fragment) {

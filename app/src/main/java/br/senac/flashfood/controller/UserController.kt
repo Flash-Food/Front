@@ -4,6 +4,7 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import br.senac.flashfood.client.UserService
 import br.senac.flashfood.config.RetrofitConfig
+import br.senac.flashfood.models.dto.user.UserInfoResponseDTO
 import br.senac.flashfood.models.dto.user.UserLoginRequestDTO
 import br.senac.flashfood.models.dto.user.UserSignUpRequestDTO
 import io.reactivex.rxjava3.schedulers.Schedulers
@@ -25,7 +26,7 @@ class UserController {
                     else result.postValue(false)
                 },
                 {error ->
-                    Log.e("ERROR_LOGIN", error.message.toString())
+                    Log.e("ERROR_USER_LOGIN", error.message.toString())
                     result.postValue(false)
                 })
     }
@@ -40,7 +41,25 @@ class UserController {
                     else result.postValue(false)
                 },
                 { error ->
-                    Log.e("ERROR_SIGNUP", error.message.toString())
+                    Log.e("ERROR_USER_SIGNUP", error.message.toString())
+                    result.postValue(false)
+                })
+    }
+
+    fun info(user: MutableLiveData<UserInfoResponseDTO>, result: MutableLiveData<Boolean>) {
+
+        service.getInfo().subscribeOn(Schedulers.io())
+            .observeOn(Schedulers.newThread())
+            .subscribe(
+                {value ->
+                    if(value.isSuccessful) {
+                        user.postValue(value.body())
+                        result.postValue(true)
+                    }
+                    else result.postValue(false)
+                },
+                {error ->
+                    Log.e("ERROR_USER_INFO", error.message.toString())
                     result.postValue(false)
                 })
     }

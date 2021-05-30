@@ -1,26 +1,36 @@
 package br.senac.flashfood.activities
 
+import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import br.senac.flashfood.R
+import br.senac.flashfood.context.UserContext
 import br.senac.flashfood.databinding.ActivityMainBinding
-import br.senac.flashfood.fragments.FragLogin
+import br.senac.flashfood.fragments.login.FragLogin
+import br.senac.flashfood.utils.internal.SharedUtils
+import br.senac.flashfood.utils.ui.alterFragment
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var binding : br.senac.flashfood.databinding.ActivityMainBinding
+    private lateinit var binding : ActivityMainBinding
+
+    private lateinit var sharedUtils : SharedUtils
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        sharedUtils = SharedUtils(this)
 
-        supportFragmentManager.beginTransaction().
-                                replace(R.id.containerMain, FragLogin()).commit()
-
-
+        if(sharedUtils.getToken().isNullOrEmpty())
+            alterFragment(this, R.id.containerMain,
+                FragLogin()
+            )
+        else {
+               UserContext.token = sharedUtils.getToken()!!
+               startActivity(Intent(this, BottomNavigationActivity::class.java))
+        }
     }
 
 

@@ -1,6 +1,6 @@
 package br.senac.flashfood.models.dto.restaurant
 
-import br.senac.flashfood.constants.CategoryProduct
+import br.senac.flashfood.constants.CategoryProductConstants
 import java.util.*
 
 data class ProductResponseDTO (
@@ -8,5 +8,5 @@ data class ProductResponseDTO (
     val name: String,
     val description: String,
     val price: Double,
-    val category: CategoryProduct
+    val category: CategoryProductConstants
 )

@@ -7,6 +7,8 @@ import br.senac.flashfood.config.RetrofitConfig
 import br.senac.flashfood.models.dto.restaurant.RestaurantResponseDTO
 import io.reactivex.rxjava3.disposables.Disposable
 import io.reactivex.rxjava3.schedulers.Schedulers
+import java.lang.Exception
+import java.util.*
 
 class RestaurantController {
 
@@ -29,6 +31,27 @@ class RestaurantController {
                     }
                 },{error ->
                     Log.e("ERROR_GET_ALL", error?.message.toString())
+                    result.postValue(throw SecurityException(error.message.toString()))
+                }
+            )
+    }
+
+
+    fun getRestaurantAndMenu(id: UUID, restaurants: MutableLiveData<RestaurantResponseDTO?>, result: MutableLiveData<Boolean>) {
+
+        service.getRestaurantAndMenu(id).subscribeOn(Schedulers.io())
+            .observeOn(Schedulers.newThread())
+            .subscribe(
+                {value ->
+                    if(value.isSuccessful) {
+                        value.body()?.let { restaurants.postValue(it) }
+                        result.postValue(true)
+                    }
+                    else {
+                        result.postValue(false)
+                    }
+                },{error ->
+                    Log.e("ERROR_GET_REST_AND_MENU", error?.message.toString())
                     result.postValue(false)
                 }
             )
