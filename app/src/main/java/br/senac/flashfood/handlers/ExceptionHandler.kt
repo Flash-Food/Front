@@ -12,7 +12,6 @@ class ExceptionHandler(context: Context) : Thread.UncaughtExceptionHandler {
     override fun uncaughtException(t: Thread, e: Throwable) {
         (e as CompositeException).exceptions.forEach{
             if(it.message.equals("403")) {
-                Log.e("ACHOI", "AAAA")
                 MANAGER_VIEWS.alterViewIfForbidden()
             }
 

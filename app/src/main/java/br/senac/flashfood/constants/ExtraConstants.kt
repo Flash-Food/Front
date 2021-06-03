@@ -7,7 +7,8 @@ enum class ExtraConstants(value: String) {
     PRODUCT_ID("PRODUCT_ID"),
     PRODUCT_NAME("PRODUCT_NAME"),
     PRODUCT_DESC("PRODUCT_DESC"),
-    PRODUCT_PRICE("PRODUCT_PRICE");
+    PRODUCT_PRICE("PRODUCT_PRICE"),
+    COD_PURCHASE("COD_PURCHASE");
 
     val value = value
 }

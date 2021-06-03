@@ -1,5 +1,6 @@
 package br.senac.flashfood.activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -31,10 +32,17 @@ class ShopCartActivity : AppCompatActivity() {
             finish()
         }
 
+        binding.btnPayment.setOnClickListener {
+            startActivity(
+                Intent(this, PaymentActivity::class.java)
+                    .putExtra(ExtraConstants.RESTAURANT_ID.value, idRestaurant.toString())
+            )
+        }
+
         getExtras()
 
         setProductsInContainer(
-            getListProducts(idRestaurant)
+            UserShopCartsContext.getListProductsByRestaurant(idRestaurant)
         )
 
     }
@@ -42,19 +50,6 @@ class ShopCartActivity : AppCompatActivity() {
 
     fun getExtras() {
         idRestaurant = UUID.fromString(intent.getStringExtra(ExtraConstants.RESTAURANT_ID.value).orEmpty())
-    }
-
-    fun getListProducts(idRestaurant: UUID): ArrayList<Product> {
-        val SHOP_CART = UserShopCartsContext.getShopCart(idRestaurant)
-        if(SHOP_CART != null) {
-            val PRODUCTS = ArrayList<Product>()
-            SHOP_CART.products?.forEach {
-                it.value.forEach {
-                    PRODUCTS.add(it)
-                }
-            }
-            return PRODUCTS
-        } else return ArrayList()
     }
 
     fun setProductsInContainer(products: ArrayList<Product>) {

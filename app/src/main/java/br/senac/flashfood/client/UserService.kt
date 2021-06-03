@@ -1,5 +1,6 @@
 package br.senac.flashfood.client
 
+import br.senac.flashfood.models.dto.purchase.PurchaseResponseDTO
 import br.senac.flashfood.models.dto.user.UserInfoResponseDTO
 import br.senac.flashfood.models.dto.user.UserLoginRequestDTO
 import br.senac.flashfood.models.dto.user.UserSignUpRequestDTO
@@ -20,4 +21,7 @@ interface UserService {
 
     @GET("user/info")
     fun getInfo() : Observable<Response<UserInfoResponseDTO>>
+
+    @GET("user/purchase")
+    fun getPurchases(): Observable<Response<List<PurchaseResponseDTO>>>
 }

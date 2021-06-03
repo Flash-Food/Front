@@ -57,4 +57,27 @@ class RestaurantController {
             )
     }
 
+
+    fun getRestaurantByProductId(id: UUID, restaurants: MutableLiveData<RestaurantResponseDTO?>, result: MutableLiveData<Boolean>) {
+
+        service.getRestaurantByProductId(id).subscribeOn(Schedulers.io())
+            .observeOn(Schedulers.newThread())
+            .subscribe(
+                {value ->
+                    if(value.isSuccessful) {
+                        value.body()?.let { restaurants.postValue(it) }
+                        result.postValue(true)
+                    }
+                    else {
+                        Log.e("A", value.message())
+                        result.postValue(false)
+                    }
+                },{error ->
+                    Log.e("ERROR_GET_REST_BY_PRID", error?.message.toString())
+                    result.postValue(false)
+                }
+            )
+    }
+
+
 }

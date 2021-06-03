@@ -15,4 +15,7 @@ interface RestaurantService {
     @GET("restaurant/{ID}")
     fun getRestaurantAndMenu(@Path("ID") id: UUID) : Observable<Response<RestaurantResponseDTO>>
 
+    @GET("restaurant/product/{ID}")
+    fun getRestaurantByProductId(@Path("ID") id: UUID) : Observable<Response<RestaurantResponseDTO>>
+
 }

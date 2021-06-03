@@ -13,7 +13,6 @@ class ManagerViews(context: Context) {
     private val SHARED_UTILS = SharedUtils(CONTEXT)
 
     fun alterViewIfForbidden() {
-        Log.e("CAIU NO MANAGER", "AAAA")
         SHARED_UTILS.removeToken()
         CONTEXT.startActivity(Intent(CONTEXT, MainActivity::class.java))
     }

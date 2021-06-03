@@ -1,5 +1,6 @@
 package br.senac.flashfood.fragments.user
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,9 +9,11 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
+import br.senac.flashfood.activities.PurchasesActivity
 import br.senac.flashfood.controller.UserController
 import br.senac.flashfood.databinding.FragmentFragProfileBinding
 import br.senac.flashfood.models.dto.user.UserInfoResponseDTO
+import br.senac.flashfood.utils.internal.SharedUtils
 import br.senac.flashfood.utils.ui.toastShow
 
 class FragProfile : Fragment() {
@@ -29,6 +32,15 @@ class FragProfile : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentFragProfileBinding.inflate(layoutInflater)
+
+        binding.txtPurchases?.setOnClickListener {
+            startActivity(Intent(activity, PurchasesActivity::class.java))
+        }
+
+        binding.txtExit?.setOnClickListener {
+            SharedUtils(activity!!).removeToken();
+            activity!!.finishAffinity()
+        }
 
         USER_CONTROLLER.info(mUserInfo, mResult)
 

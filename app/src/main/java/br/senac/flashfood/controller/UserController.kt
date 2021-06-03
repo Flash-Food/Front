@@ -4,6 +4,7 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import br.senac.flashfood.client.UserService
 import br.senac.flashfood.config.RetrofitConfig
+import br.senac.flashfood.models.dto.purchase.PurchaseResponseDTO
 import br.senac.flashfood.models.dto.user.UserInfoResponseDTO
 import br.senac.flashfood.models.dto.user.UserLoginRequestDTO
 import br.senac.flashfood.models.dto.user.UserSignUpRequestDTO
@@ -14,7 +15,6 @@ class UserController {
     private val retrofit = RetrofitConfig.getRetrofit()
 
     private val service = retrofit.create(UserService::class.java)
-
 
     fun login(user: UserLoginRequestDTO, result: MutableLiveData<Boolean>) {
 
@@ -60,6 +60,25 @@ class UserController {
                 },
                 {error ->
                     Log.e("ERROR_USER_INFO", error.message.toString())
+                    result.postValue(false)
+                })
+    }
+
+
+    fun purchases(purchases: MutableLiveData<List<PurchaseResponseDTO>>, result: MutableLiveData<Boolean>) {
+
+        service.getPurchases().subscribeOn(Schedulers.io())
+            .observeOn(Schedulers.newThread())
+            .subscribe(
+                {value ->
+                    if(value.isSuccessful) {
+                        value.body()?.let { purchases.postValue(it) }
+                        result.postValue(true)
+                    }
+                    else result.postValue(false)
+                },
+                {error ->
+                    Log.e("ERROR_USER_PURCHASES", error.message.toString())
                     result.postValue(false)
                 })
     }
