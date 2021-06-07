@@ -34,6 +34,10 @@ class PaymentActivity : AppCompatActivity() {
         setContentView(binding.root)
         getExtras()
 
+        binding.buttonBackScreenCheckout.setOnClickListener {
+            finish()
+        }
+
         binding.buttonSendPayment.setOnClickListener {
             PURCHASE_CONTROLLER.purchase(getPurchaseRequestDTO(), mResult, mUUIDResp)
         }

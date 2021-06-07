@@ -2,6 +2,7 @@ package br.senac.flashfood.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
 import br.senac.flashfood.constants.ExtraConstants
@@ -21,7 +22,7 @@ class PurchaseDetailsActivity : AppCompatActivity() {
 
     private lateinit var codPurchase: UUID
 
-    private var totalValue = 0.0
+    private var totalValue = "0.0"
 
     private lateinit var datePurchase: String
 
@@ -35,12 +36,19 @@ class PurchaseDetailsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityPurchaseDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.buttonBackSignup2.setOnClickListener {
+            finish()
+        }
+
         getExtras()
 
         PURCHASE_CONTROLLER.getByCod(mListProducts, mResult, codPurchase)
 
-        binding.txtValuePurchaseDetails.text = totalValue.toString()
+        binding.txtValuePurchaseDetails.text = totalValue
         binding.txtRestaurantNamePurchase.text = nameRestaurant
+        binding.txtCodPurchaseDetails.text = codPurchase.toString()
+        binding.txtDatePurchaseDetails.text = datePurchase
 
         mResult.observe(this, Observer {
             if(!it) toastShow(this, "Erro para listar produtos", Toast.LENGTH_LONG)
@@ -50,13 +58,13 @@ class PurchaseDetailsActivity : AppCompatActivity() {
             it?.let { showProducts(it) }
         })
 
-
     }
-
 
     fun getExtras() {
         nameRestaurant = intent.getStringExtra(ExtraConstants.RESTAURANT_NAME.value).orEmpty()
         codPurchase  = UUID.fromString(intent.getStringExtra(ExtraConstants.COD_PURCHASE.value).orEmpty())
+        totalValue = intent.getStringExtra(ExtraConstants.TOTAL_VALUE_PURCHASE.value).orEmpty()
+        datePurchase = intent.getStringExtra(ExtraConstants.PURCHASE_DATE.value).orEmpty()
     }
 
     fun showProducts(products: List<ProductResponseDTO>) {

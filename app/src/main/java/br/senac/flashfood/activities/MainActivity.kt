@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
 
         sharedUtils = SharedUtils(this)
 
-        if(sharedUtils.getToken().isNullOrEmpty())
+        if(sharedUtils.getToken().isNullOrBlank())
             alterFragment(this, R.id.containerMain,
                 FragLogin()
             )

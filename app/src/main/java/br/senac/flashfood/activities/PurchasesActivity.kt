@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.lifecycle.MutableLiveData
@@ -31,6 +32,10 @@ class PurchasesActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityPurchasesBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.buttonBackSignup2?.setOnClickListener {
+            finish()
+        }
 
         USER_CONTROLLER.purchases(mListPurchases, mResult)
 
