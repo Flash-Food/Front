@@ -21,7 +21,7 @@ class SharedUtils(context: Context) {
 
     fun removeToken() {
         SHARED_PREFERENCES.edit()
-            .putString(SharedPreferencesConstants.TOKEN_NAME.value, "")
+            .remove(SharedPreferencesConstants.TOKEN_NAME.value)
             .commit()
     }
 }

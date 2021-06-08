@@ -10,7 +10,9 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
+import br.senac.flashfood.activities.MainActivity
 import br.senac.flashfood.activities.PurchasesActivity
+import br.senac.flashfood.context.UserContext
 import br.senac.flashfood.controller.UserController
 import br.senac.flashfood.databinding.FragmentFragProfileBinding
 import br.senac.flashfood.models.dto.user.UserInfoResponseDTO
@@ -40,7 +42,9 @@ class FragProfile : Fragment() {
 
         binding.txtExit?.setOnClickListener {
             SharedUtils(activity!!).removeToken()
+            UserContext.token = ""
             activity!!.finishAffinity()
+            startActivity(Intent(activity, MainActivity::class.java))
         }
 
         USER_CONTROLLER.info(mUserInfo, mResult)
