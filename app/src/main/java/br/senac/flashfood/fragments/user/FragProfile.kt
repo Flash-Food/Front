@@ -36,6 +36,8 @@ class FragProfile : Fragment() {
     ): View? {
         binding = FragmentFragProfileBinding.inflate(layoutInflater)
 
+        binding.prbProfile?.visibility = View.VISIBLE
+
         binding.txtPurchases?.setOnClickListener {
             startActivity(Intent(activity, PurchasesActivity::class.java))
         }
@@ -55,6 +57,7 @@ class FragProfile : Fragment() {
 
         mResult.observe(this, Observer {
             if(!it) toastShow(activity, "Erro ao buscar informções do usuario", Toast.LENGTH_LONG)
+            binding.prbProfile?.visibility = View.INVISIBLE
         })
 
         return binding.root

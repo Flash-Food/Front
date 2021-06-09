@@ -48,12 +48,16 @@ class FragSearch : Fragment() {
                    "Digite algo para a busca",
                    Toast.LENGTH_LONG
                )
-               else PRODUCT_CONTROLLER.findByName(mListProducts, mResult, it)
+               else {
+                   binding.prbSearch?.visibility = View.VISIBLE
+                   PRODUCT_CONTROLLER.findByName(mListProducts, mResult, it)
+               }
            }
         }
 
         mResult.observe(this, Observer<Boolean> {
             if (!it) toastShow(activity, "Erro para listar os produtos!", Toast.LENGTH_LONG)
+            binding.prbSearch?.visibility = View.INVISIBLE
         })
 
         mListProducts.observe(this, Observer {

@@ -39,9 +39,11 @@ class FragRestaurant : Fragment() {
         Thread.setDefaultUncaughtExceptionHandler(ExceptionHandler(activity!!.baseContext))
 
         RESTAURANT_CONTROLLER.getAll(mGetAllList, mGetAllResult)
+        binding.prbRestaurants?.visibility = View.VISIBLE
 
         mGetAllResult.observe(this, Observer<Boolean> {
             if(!it) toastShow(activity, "Erro para listar os restaurantes!", Toast.LENGTH_LONG)
+            binding.prbRestaurants?.visibility = View.INVISIBLE
         })
 
         mGetAllList.observe(this, Observer {
