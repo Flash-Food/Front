@@ -19,6 +19,7 @@
     <string name="reenter_password">Confirme a Senha</string>
     <string name="send">Enviar</string>
     <string name="order_success">Seu pedido foi finalizado com sucesso!</string>
+    <string name="order_finished">Dirija-se ao caixa com o codigo abaixo:</string>
     <string name="back_to_menu">Voltar ao inicio</string>
     <string name="checkout">Checkout</string>
     <string name="payment">Pagamento</string>
@@ -32,6 +33,7 @@
     <string name="profile">Meu Perfil</string>
     <string name="type_email_to_password">Digite o email para recuperar a senha:</string>
     <string name="search">Buscar</string>
+    <string name="restaurants">Restaurantes</string>
     <string name="title_activity_restaurant_menu">RestaurantMenuActivity</string>
     <!--
     This string is used for square devices and overridden by hello_world in

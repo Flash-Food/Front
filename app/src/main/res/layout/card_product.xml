@@ -30,7 +30,8 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
                 android:text="Preço"
-                android:textAlignment="viewEnd" />
+                android:textAlignment="viewEnd"
+                android:textColor="#42910A" />
         </TableRow>
 
     </TableLayout>

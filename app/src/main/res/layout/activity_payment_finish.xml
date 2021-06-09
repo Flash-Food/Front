@@ -36,18 +36,20 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
         android:inputType="textImeMultiLine"
         android:text="TextView"
-        android:textColor="#090909"
-        android:textSize="20sp"
+        android:textAlignment="center"
+        android:textColor="#42910a"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/okImageView" />
+        app:layout_constraintTop_toBottomOf="@+id/messageTextFinish2" />
 
-<TextView
+    <TextView
     android:id="@+id/messageTextFinish"
     android:layout_width="0dp"
     android:layout_height="wrap_content"
@@ -65,7 +67,25 @@
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toBottomOf="@+id/txtCodPurchase" />
 
-<Button
+    <TextView
+        android:id="@+id/messageTextFinish2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:fontFamily="sans-serif-light"
+        android:text="@string/order_finished"
+        android:textAlignment="center"
+        android:textColor="#333333"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/okImageView" />
+
+    <Button
     android:id="@+id/buttonBackToMenu"
     android:layout_width="0dp"
     android:layout_height="wrap_content"

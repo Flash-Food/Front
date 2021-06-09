@@ -25,7 +25,7 @@
             <ImageButton
                 android:id="@+id/btnBackMenuTheOfShopCart"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="34dp"
                 android:layout_marginTop="16dp"
                 android:background="#00FFFFFF"
                 android:src="@drawable/ic_baseline_arrow_back_24" />
@@ -38,8 +38,8 @@
                 android:layout_weight="1"
                 android:text="Carrinho de Compras"
                 android:textAlignment="center"
-                android:textSize="24dp"
-                android:textStyle="bold" />
+                android:textColor="#333333"
+                android:textSize="24dp" />
 
 
         </TableRow>
@@ -68,7 +68,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
+        android:fontFamily="sans-serif-light"
         android:text="Valor total:"
+        android:textColor="#333333"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/scrollView3" />
@@ -80,6 +82,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:text="TextView"
+        android:textColor="#42910a"
         android:textSize="24sp"
         app:layout_constraintStart_toEndOf="@+id/textView2"
         app:layout_constraintTop_toBottomOf="@+id/scrollView3" />
@@ -91,7 +94,9 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
+        android:backgroundTint="#333333"
         android:text="Pagar"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtValueFinal" />

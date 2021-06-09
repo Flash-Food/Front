@@ -7,29 +7,46 @@
     android:layout_height="match_parent"
     tools:context=".fragments.restaurant.FragRestaurant">
 
+    <ImageView
+        android:id="@+id/imageLogoProfile3"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:src="@drawable/flash_food"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ProgressBar
         android:id="@+id/prbRestaurants"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="0dp"
         android:layout_height="10dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
         android:indeterminate="true"
         android:indeterminateTint="#22D529"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/imageLogoProfile3" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
-        android:text="Restaurantes"
+        android:fontFamily="sans-serif-thin"
+        android:text="@string/restaurants"
         android:textAlignment="center"
+        android:textColor="#333333"
         android:textSize="24sp"
         android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
@@ -40,7 +57,7 @@
     <ScrollView
         android:layout_width="404dp"
         android:layout_height="617dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="128dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

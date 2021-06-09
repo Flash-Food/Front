@@ -6,26 +6,41 @@
     android:layout_height="match_parent"
     tools:context=".fragments.restaurant.FragSearch" >
 
+    <ImageView
+        android:id="@+id/imageLogoProfile2"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:src="@drawable/flash_food"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ProgressBar
         android:id="@+id/prbSearch"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="0dp"
         android:layout_height="10dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
         android:indeterminate="true"
         android:indeterminateTint="#22D529"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/imageLogoProfile2" />
 
     <TextView
         android:id="@+id/searchHeaderText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
         android:fontFamily="sans-serif-thin"
         android:text="@string/search"
@@ -54,7 +69,7 @@
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="31dp"
-        android:layout_marginTop="33dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
         android:src="@drawable/search"
         app:layout_constraintEnd_toEndOf="parent"
@@ -64,8 +79,7 @@
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="545dp"
-        android:layout_marginTop="64dp"
-        android:layout_marginEnd="10dp"
+        android:layout_marginTop="108dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
