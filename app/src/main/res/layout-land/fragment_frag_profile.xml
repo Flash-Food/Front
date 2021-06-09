@@ -5,7 +5,8 @@
     android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.user.FragProfile" >
+    android:layout_gravity="center"
+    tools:context=".fragments.user.FragProfile">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -13,12 +14,28 @@
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp">
 
+        <ProgressBar
+            android:id="@+id/prbProfile"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="0dp"
+            android:layout_height="10dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:indeterminate="true"
+            android:indeterminateTint="#22D529"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageLogoProfile" />
+
         <TextView
             android:id="@+id/headerProfileText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="14dp"
             android:layout_marginEnd="32dp"
             android:fontFamily="sans-serif-thin"
             android:text="@string/profile"
@@ -30,29 +47,28 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageLogoProfile" />
+            app:layout_constraintTop_toBottomOf="@+id/prbProfile" />
 
         <ImageView
             android:id="@+id/imageLogoProfile"
             android:layout_width="0dp"
             android:layout_height="55dp"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="64dp"
+            android:layout_marginTop="100dp"
             android:layout_marginEnd="32dp"
             android:src="@drawable/flash_food"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/prbSearch" />
 
         <ImageView
             android:id="@+id/imageProfileIcon"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="32dp"
+            android:layout_marginTop="20dp"
             android:src="@drawable/user"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/headerProfileText" />
 
@@ -60,64 +76,87 @@
             android:id="@+id/txtNameProfile"
             android:layout_width="0dp"
             android:layout_height="32dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="32dp"
             android:fontFamily="sans-serif-light"
             android:text="@string/name"
-            android:textAlignment="center"
+            android:textAlignment="textStart"
             android:textColor="@color/black"
             android:textSize="16sp"
-            android:textStyle="bold"
+            android:textStyle="bold|italic"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageProfileIcon" />
+            app:layout_constraintStart_toEndOf="@+id/imageProfileIcon"
+            app:layout_constraintTop_toBottomOf="@+id/headerProfileText" />
 
         <TextView
             android:id="@+id/txtCpfProfile"
             android:layout_width="0dp"
             android:layout_height="32dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="32dp"
             android:fontFamily="sans-serif-light"
             android:text="@string/cpf"
-            android:textAlignment="center"
+            android:textAlignment="textStart"
             android:textColor="@color/black"
             android:textSize="16sp"
-            android:textStyle="bold"
+            android:textStyle="italic"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.501"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageProfileIcon"
             app:layout_constraintTop_toBottomOf="@+id/txtNameProfile" />
 
         <TextView
             android:id="@+id/txtEmailProfile"
             android:layout_width="0dp"
             android:layout_height="32dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="32dp"
             android:fontFamily="sans-serif-light"
             android:text="@string/email"
-            android:textAlignment="center"
+            android:textAlignment="textStart"
             android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="italic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageProfileIcon"
+            app:layout_constraintTop_toBottomOf="@+id/txtCpfProfile" />
+
+        <TextView
+            android:id="@+id/txtPurchases"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="32dp"
+            android:fontFamily="sans-serif-black"
+            android:text="Pedidos"
+            android:textAlignment="center"
+            android:textColor="#090909"
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.501"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtCpfProfile" />
+            app:layout_constraintTop_toBottomOf="@+id/txtEmailProfile" />
 
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/menuNavigation"
-            android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/txtExit"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:backgroundTint="#333333"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="32dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="Sair"
+            android:textAlignment="center"
+            android:textColor="#090909"
+            android:textSize="16sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:menu="@menu/bottom_navigation_menu" />
+            app:layout_constraintTop_toBottomOf="@+id/txtPurchases" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
