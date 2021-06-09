@@ -49,15 +49,15 @@ class FragSignup : Fragment() {
                     phoneNumber
                 )
             userController.signup(userSignUpRequestDTO, mSignUpResult)
+            binding.prbSigNup?.visibility = View.VISIBLE
             binding.buttonSignup.isEnabled = false
         }
 
         mSignUpResult.observe(this, Observer<Boolean> {
             if(it) alterView(FragLogin())
-            else {
-                binding.buttonSignup.isEnabled = true
-                toastShow(activity, "Erro ao realizar cadatro!", Toast.LENGTH_LONG)
-            }
+            else toastShow(activity, "Erro ao realizar cadatro!", Toast.LENGTH_LONG)
+            binding.buttonSignup.isEnabled = true
+            binding.prbSigNup?.visibility = View.INVISIBLE
         })
 
         return binding.root

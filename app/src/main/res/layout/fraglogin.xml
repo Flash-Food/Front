@@ -4,19 +4,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:backgroundTint="#100F0F"
     tools:context=".fragments.login.FragLogin">
+
+        <ProgressBar
+            android:id="@+id/prbLogin"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="0dp"
+            android:layout_height="10dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="64dp"
+            android:layout_marginEnd="32dp"
+            android:indeterminate="true"
+            android:indeterminateTint="#22D529"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/imageLogoFinish"
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="64dp"
+            android:layout_marginTop="48dp"
             android:layout_marginEnd="32dp"
             android:src="@drawable/flash_food"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/prbLogin" />
 
         <EditText
             android:id="@+id/editEmailLogin"
@@ -68,6 +84,7 @@
             android:layout_marginTop="48dp"
             android:layout_marginEnd="32dp"
             android:backgroundTint="#333333"
+            android:enabled="true"
             android:text="@string/login"
             android:textColor="#FFFFFF"
             app:layout_constraintEnd_toEndOf="parent"

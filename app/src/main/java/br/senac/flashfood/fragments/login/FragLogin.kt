@@ -49,12 +49,16 @@ class FragLogin : Fragment() {
                 username,
                 password
             )
+            binding.prbLogin?.visibility = View.VISIBLE
+            binding.btnEnterLogin.isEnabled = false
             USER_CONTROLLER.login(user, mLoginResult)
         }
 
         mLoginResult.observe(this, Observer<Boolean>{
             if(it) startActivity(Intent(activity, BottomNavigationActivity::class.java))
             else toastShow(activity, "Erro ao realizar login!", Toast.LENGTH_LONG)
+            binding.prbLogin?.visibility = View.INVISIBLE
+            binding.btnEnterLogin.isEnabled = true
         })
 
         return binding.root

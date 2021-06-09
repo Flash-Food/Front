@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.util.Log
 import br.senac.flashfood.activities.MainActivity
+import br.senac.flashfood.context.UserContext
 import br.senac.flashfood.utils.internal.SharedUtils
 
 class ManagerViews(context: Context) {
@@ -14,6 +15,7 @@ class ManagerViews(context: Context) {
 
     fun alterViewIfForbidden() {
         SHARED_UTILS.removeToken()
+        UserContext.token = ""
         CONTEXT.startActivity(Intent(CONTEXT, MainActivity::class.java))
     }
 
